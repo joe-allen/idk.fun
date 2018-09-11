@@ -1,9 +1,23 @@
 <template>
-  <v-container fluid fill-height>
+  <v-container fluid fill-height abs>
+    <!-- <div class="bgImage" style="
+        background: url('https://s3-media3.fl.yelpcdn.com/bphoto/LhtqPDUKgSUHv0gkri9pdg/o.jpg');
+        position: absolute;
+        width: 100%;
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        margin-left: -16px;
+        top: 0;
+        z-index: 0;
+        filter: blur(3px) saturate(99%);
+        /* display: none; */
+    "></div> -->
     <v-layout column>
       <v-flex justify-space-between>
-        <v-layout column>
+        <v-layout column justify-space-between>
           <v-autocomplete
+            v-show="!resultsAreIn"
             v-model="filter_category"
             :items="categories"
             hide-no-data
@@ -28,9 +42,8 @@
             hint="USE YOUR LOCATION?"
             persistent-hint
           ></v-text-field> -->
-
-
           <v-combobox
+              v-show="!resultsAreIn"
               prepend-icon="my_location"
               @keyup="getTypedLocation"
               v-model="filter_location"
@@ -39,20 +52,8 @@
               @input="filterLocation"
               label="What's you location?"
             ></v-combobox>
-          <!-- <v-text-field
-            prepend-icon="my_location"
-            auto-grow
-            autofocus
-            clearable
-            color="primary"
-            full-width
-            hint
-            type="text"
-            label="Location (city, zip, neighborhood)"
-            v-model="location"
-            mx-0
-          ></v-text-field> -->
           <v-slider
+            v-show="!resultsAreIn"
             class="mt-4"
             prepend-icon="place"
             thumb-label="always"
@@ -68,22 +69,6 @@
             full-width
             type="number"
           ></v-slider>
-          <!-- <v-text-field
-            prepend-icon="place"
-            auto-grow
-            autofocus
-            clearable
-            color="primary"
-            full-width
-            hint
-            type="number"
-            label="Distance (5 - 25 miles)"
-            min="5"
-            step="1"
-            max="25"
-            v-model="distance"
-            mx-0
-          ></v-text-field> -->
 
           <div v-if="alert">
             <!-- <v-alert
@@ -117,9 +102,9 @@
             <v-flex justify-center v-if="resultsAreIn">
               <v-layout column align-center class="text-center">
                 <!-- <code style="height: 100px; overflow: scroll;">{{ yelpResultsRandom1 }}</code> -->
-                <img v-show="yelpResultsRandom1.image_url !== undefined" :src="yelpResultsRandom1.image_url" width="120" :alt="`${yelpResultsRandom1.name} + image`">
-                <p><strong>{{ yelpResultsRandom1.name }}</strong></p>
-                <p class="star_rating">{{ yelpResultsRandom1.rating }} <v-icon small ma-0>star_rate</v-icon></p>
+                <img class="result_img" v-show="yelpResultsRandom1.image_url !== undefined" :src="yelpResultsRandom1.image_url" :alt="`${yelpResultsRandom1.name} + image`">
+                <p class="result_title"><strong>{{ yelpResultsRandom1.name }}</strong></p>
+                <p class="result_rating">{{ yelpResultsRandom1.rating }} <v-icon small ma-0>star_rate</v-icon></p>
                 <p>
                   <span v-for="(cat, index) in yelpResultsRandom1.categories" :key="`cat_${index}_${yelpResultsRandom1.id}`">
                     <v-chip class="secondary white--text" small>{{ cat.title }}</v-chip>
@@ -131,12 +116,25 @@
 
           <v-flex xs2 column justify-center align-end>
             <v-btn
-
+              v-if="resultsAreIn"
+              class="mx-0 flip_btn"
+              @click="processReset"
+              :loading="loading"
+              :disabled="loading"
+              color="primary">
+              <v-icon medium v-if="resultsAreIn">keyboard_backspace</v-icon>
+              <span slot="loader" class="custom-loader">
+                <v-icon light>cached</v-icon>
+              </span>
+            </v-btn>
+            <v-btn
+              v-else
               class="mx-0 flip_btn"
               @click="processRequest"
               :loading="loading"
               :disabled="loading"
-              color="primary">GO!
+              color="primary">
+              <v-icon medium>search</v-icon>
               <span slot="loader" class="custom-loader">
                 <v-icon light>cached</v-icon>
               </span>
@@ -144,7 +142,6 @@
           </v-flex>
         </v-layout>
       </v-flex>
-
     </v-layout>
   </v-container>
 </template>
@@ -204,7 +201,7 @@ export default {
       snackbar: true,
       color: '',
       mode: '',
-      timeout: 30000,
+      timeout: 3000,
       categories: ["Food","Bars","Restaurants","Museums","Coffee","Wine","Brewering","Candy Stores","Parks","Adult Entertainment"]
     }
   },
@@ -270,6 +267,11 @@ export default {
                 break;
           }
           console.log('error: ', msg);
+          this.alert = true;
+          this.snackbar = true;
+          this.loading = false;
+          this.timeout = 8000;
+          this.errorMsg = "Location error! :o We dont have permission to user your location. Try your zip code!";
         }
       );
     },
@@ -280,29 +282,33 @@ export default {
       this.loading = true;
       this.resultsAreIn = false;
 
-      // console.log('this.filter_location: ', this.filter_location);
-      if (this.filter_location == "" || this.filter_location == null || this.filter_location == 'undefined') {
-
-        console.log('Shit is not define: ', this.filter_location);
+      if (this.filter_location == "" || this.filter_location == null || this.filter_location == 'undefined' ||
+          this.filter_category == "" || this.filter_category == null || this.filter_category == 'undefined') {
         this.alert = true;
         this.snackbar = true;
-        this.errorMsg = "Oops, please use the filters!";
+        this.loading = false;
+        this.timeout = 3000;
+        this.errorMsg = "Oops, please use the filters above!";
       } else {
-        this.snackbar = false;
+
         this.alert = false;
-      }
+        this.snackbar = false;
 
-      if(this.filter_location == 'Use My Location') {
-        // 'Use My Location' is selected, wait coords
-        this.getUserCoords();
-      }
-      else {
-        // reset vars
-        this.latitude = '';
-        this.longitude = '';
+        if(this.filter_location == 'Use My Location') {
+          // 'Use My Location' is selected, wait coords
+          this.getUserCoords();
+        }
+        else {
+          // reset vars
+          this.latitude = '';
+          this.longitude = '';
 
-        this.buildRequest();
+          this.buildRequest();
+        }
       }
+    },
+    processReset: function () {
+      this.resultsAreIn = false;
     },
     buildRequest: function () {
       let component = this;
@@ -365,20 +371,18 @@ export default {
       }
 
       let paramResults = qs(params);
-
       // console.log('paramResults: ', paramResults);
 
       // send to api
       this.postRequest(paramResults);
     },
     clearAlert: function () {
-      console.log('cool');
       this.alert = false;
     },
     postRequest: function (paramResults) {
       let component = this;
       let randomNum = Math.floor((Math.random() * 50));
-      console.log('randomNum: ', randomNum);
+      // console.log('randomNum: ', randomNum);
 
       axios.post('/.netlify/functions/yelp', paramResults)
       .then(response => {
@@ -387,6 +391,7 @@ export default {
         component.yelpResults = response.data;
         component.yelpResultsRandom1 = response.data.businesses[randomNum];
         component.yelpResultsTotal = response.data.total;
+        console.log('component.yelpResultsRandom1: ', component.yelpResultsRandom1);
       });
     }
   }
@@ -473,9 +478,6 @@ export default {
   .text-center p {
     text-align: center;
   }
-  .star_rating {
-    margin-right: -75px;
-  }
   .your_locale--input .v-messages.theme--light,
   .your_locale--input .v-messages.theme--dark {
     color: #e57373
@@ -484,12 +486,38 @@ export default {
   .your_locale--input .v-messages.theme--dark:hover {
     cursor: pointer;
   }
+  .abs {
+    position: absolute;
+  }
+  .result_img {
+    border-radius: 50%;
+    /* border: 4px solid #fff; */
+    margin-bottom: 30px;
+    width: 250px;
+    height: 250px;
+    box-shadow: -24px 17px 1px -2px #e57373, -17px -9px 2px 0px #1976d2, 12px 2px 1px 10px #ffa726;
+    /* box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12); */
+  }
+  .result_rating {
+    margin-right: -75px;
+    font-size: 1.25em;
+  }
+  .result_title {
+    text-transform: uppercase;
+    font-size: 2em;
+  }
   @keyframes loader {
     from {
       transform: rotate(0);
     }
     to {
       transform: rotate(360deg);
+    }
+  }
+
+  @media screen and (max-height: 480px) {
+    .fill-height {
+      height: 600px;
     }
   }
 </style>
