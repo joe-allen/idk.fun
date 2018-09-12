@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    
+
     <title>IDK.</title>
 
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
@@ -45,5 +45,19 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+
+    <form action="https://idk.fun/#/" name="contact" netlify netlify-honeypot="bot-field" style="display:none">
+
+      <input type="hidden" name="form-name" value="contact" />
+      <p style="display:none;">
+        <label>Don’t fill this out: <input name="bot-field"></label>
+      </p>
+
+      <textarea name="suggestions" id="" cols="3" rows="1"></textarea>
+      <input type="checkbox" name="receiveUpdates">
+      <input type="email" name="emailAddress" />
+      <textarea name="message"></textarea>
+
+    </form>
   </body>
 </html>

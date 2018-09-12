@@ -52,12 +52,10 @@
     >
       <v-flex xs12 ma-4>
         <v-layout column>
-          <p>Will<br>soon<br>have<br>options<br>.</p>
-          <v-form netlify netlify-honeypot="bot-field" action="/" name="contact" ref="form" v-model="valid" lazy-validation>
+          <!-- <p>Will<br>soon<br>have<br>options<br>.</p> -->
+          <v-form netlify netlify-honeypot="bot-field" action="https://idk.fun/#/" name="contact" ref="form" v-model="valid" lazy-validation>
             <input type="hidden" name="form-name" value="contact" />
-            <p style="display:none;">
-              <label>Don’t fill this out: <input name="bot-field"></label>
-            </p>
+
             <v-textarea
               name="suggestions"
               label="Have any suggestions?"
@@ -83,11 +81,13 @@
               label="E-mail"
               required
               class="mt-0"
+              type="email"
             ></v-text-field>
             <v-btn
               :disabled="!valid"
               type="submit"
               @click.prevent="submit"
+              class="ma-1"
             >
               submit
             </v-btn>
@@ -228,7 +228,7 @@ export default {
         console.log('component: ', this.$refs.form.$attrs.action);
         console.log('component: ', component);
 
-        axios.post(component.$refs.form.$attrs.action, qs.stringify(formResults))
+        axios.post('https://idk.fun/#/', qs.stringify(formResults))
         .then(response => {
           component.alert = true;
           component.snackbar = true;
