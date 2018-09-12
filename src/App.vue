@@ -224,7 +224,7 @@ export default {
         console.log('component: ', this.$refs.form.$attrs.action);
         console.log('component: ', component);
 
-        fetch("/", {
+        fetch("/index.html", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: qs.stringify(formResults)
