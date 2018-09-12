@@ -51,7 +51,61 @@
       app
     >
       <v-flex xs12 ma-4>
-        <p>Will<br>soon<br>have<br>options<br>.</p>
+        <v-layout column>
+          <p>Will<br>soon<br>have<br>options<br>.</p>
+          <v-form netlify name="contact" ref="form" v-model="valid" lazy-validation>
+            <v-textarea
+              name="suggestions"
+              label="Have any suggestions?"
+              value=""
+              hint="More options, ability to order food, sharing options"
+              persistent-hint
+              counter
+              :rules="suggestionRules"
+            ></v-textarea>
+            <v-checkbox
+              name="receiveUpdates"
+              v-model="checkbox"
+              @change="EmailUpdates"
+              label="Wanna stay updated?"
+              class="mt-4"
+            ></v-checkbox>
+            <v-text-field
+              name="emailAddress"
+              v-show="checkbox"
+              id="email"
+              v-model="email"
+              :rules="emailRules"
+              label="E-mail"
+              required
+              class="mt-0"
+            ></v-text-field>
+            <v-btn
+              :disabled="!valid"
+              type="submit"
+              @click.prevent="submit"
+            >
+              submit
+            </v-btn>
+          </v-form>
+          <v-snackbar
+            dismissible
+            @input="clearAlert"
+            v-model="snackbar"
+            multi-line="multi-line"
+            :timeout="timeout"
+            vertical="vertical"
+          >
+            {{errorMsg}}
+            <v-btn
+              dark
+              flat
+              @click="snackbar = false"
+            >
+              Close
+            </v-btn>
+          </v-snackbar>
+        </v-layout>
       </v-flex>
       <v-footer app>
         <span>&copy; IDK.</span>
@@ -67,6 +121,16 @@
 export default {
   data () {
     return {
+      valid: true,
+      email: '',
+      emailRules: [
+        // v => /.+@.+/.test(v) || 'E-mail must be valid'
+      ],
+      suggestionRules: [
+        v => !!v || 'Suggestion is required in order to submit',
+        v => (v && v.length >= 5) || 'Must be more than 5 characters'
+      ],
+      checkbox: false,
       drawer: false,
       fixed: false,
       marker: true,
@@ -102,7 +166,13 @@ export default {
       miniVariant: false,
       right: true,
       openDrawer: false,
-      title: 'IDK.'
+      title: 'IDK.',
+      alert: false,
+      errorMsg: '',
+      snackbar: false,
+      color: '',
+      mode: '',
+      timeout: 3000,
     }
   },
   name: 'App',
@@ -124,14 +194,33 @@ export default {
     }
   },
   methods: {
+    EmailUpdates: function () {
+      if(this.checkbox == true) {
+        setTimeout(function() {
+          document.getElementById('email').focus();
+        }, 250);
+      } else {
+        // console.log('yes',this.$refs.form);
+      }
+    },
+    clearAlert: function () {
+      this.alert = false;
+    },
+    submit () {
+      if (this.$refs.form.validate()) {
+        console.log('yes',this.valid);
+        this.alert = true;
+        this.snackbar = true;
+        this.loading = false;
+        this.timeout = 3000;
+        this.errorMsg = (this.checkbox) ? "Nice! We will be in touch." : "Nice! Thanks for your input";
+      } else {
+        // console.log('no',this.suggestionRules);
+      }
+    },
     showMenu () {
-      let setFocus = document.getElementById('myid');
-
       // open drawer
       this.openDrawer = !this.openDrawer
-
-      // set input focus
-      setFocus.focus();
     },
     invertColors () {
       // switch colors

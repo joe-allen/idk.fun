@@ -16,6 +16,9 @@ import {
   VChip,
   VAlert,
   VSnackbar,
+  VTextarea,
+  VCheckbox,
+  VForm,
   transitions
 } from 'vuetify'
 import 'vuetify/src/stylus/app.styl'
@@ -40,6 +43,9 @@ Vue.use(Vuetify, {
     VChip,
     VAlert,
     VSnackbar,
+    VTextarea,
+    VCheckbox,
+    VForm,
     transitions
   },
   theme: {
