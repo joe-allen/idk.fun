@@ -228,7 +228,7 @@ export default {
         console.log('component: ', this.$refs.form.$attrs.action);
         console.log('component: ', component);
 
-        axios.post('index.html', qs.stringify(formResults))
+        axios.post('/', qs.stringify(formResults))
         .then(response => {
           component.alert = true;
           component.snackbar = true;
