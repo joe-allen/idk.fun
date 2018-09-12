@@ -53,7 +53,16 @@
       <v-flex xs12 ma-4>
         <v-layout column>
           <!-- <p>Will<br>soon<br>have<br>options<br>.</p> -->
-          <v-form action="" netlify netlify-honeypot="bot-field" name="contact" ref="form" v-model="valid" lazy-validation>
+          <v-form
+            method="post"
+            action=""
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            name="contact"
+            ref="form"
+            v-model="valid"
+            lazy-validation
+            @submit.prevent="handleSubmit">
             <input type="hidden" name="form-name" value="contact" />
 
             <v-textarea
@@ -86,7 +95,6 @@
             <v-btn
               :disabled="!valid"
               type="submit"
-              @click.prevent="submit"
               class="ma-1"
             >
               submit
@@ -211,31 +219,32 @@ export default {
     clearAlert: function () {
       this.alert = false;
     },
-    submit () {
+    handleSubmit () {
       let component = this;
       if (this.$refs.form.validate()) {
 
-        // let formResults = {
-        //   suggestion: this.suggestion,
-        //   email_updates: this.EmailUpdates,
-        //   email: this.email
-        // }
+        let formResults = {
+          'form-name': 'contact',
+          'suggestion': this.suggestion,
+          'email_updates': this.EmailUpdates,
+          'email': this.email
+        }
 
         // console.log('component: ', this.$refs.form.$attrs.action);
         console.log('component: ', component);
 
-        // fetch("/#/", {
-        //   method: "POST",
-        //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        //   body: qs.stringify(formResults)
-        // }).then(response => {
-        //   component.alert = true;
-        //   component.snackbar = true;
-        //   component.loading = false;
-        //   component.timeout = 3000;
-        //   component.errorMsg = (this.checkbox) ? "Nice! We will be in touch." : "Nice! Thanks for your input";
-        //   console.log('response: ', response);
-        // });
+        fetch("/#/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: qs.stringify(formResults)
+        }).then(response => {
+          component.alert = true;
+          component.snackbar = true;
+          component.loading = false;
+          component.timeout = 3000;
+          component.errorMsg = (this.checkbox) ? "Nice! We will be in touch." : "Nice! Thanks for your input";
+          console.log('response: ', response);
+        });
       } else {
         // console.log('no',this.suggestionRules);
       }
