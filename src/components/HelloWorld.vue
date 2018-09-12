@@ -502,6 +502,7 @@ export default {
     height: 250px;
     box-shadow: 0px 4px 10px #333, -24px 17px 0px -2px #e57373, -17px -9px 0px 0px #1976d2, 12px 2px 0px 10px #ffa726;
     /* box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12); */
+    object-fit: cover;
   }
   .result_rating {
     margin-right: -75px;
