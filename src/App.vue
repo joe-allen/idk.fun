@@ -215,23 +215,27 @@ export default {
       let component = this;
       if (this.$refs.form.validate()) {
 
-        // let formResults = {
-        //   suggestion: this.suggestion,
-        //   email_updates: this.EmailUpdates,
-        //   email: this.email
-        // }
+        let formResults = {
+          suggestion: this.suggestion,
+          email_updates: this.EmailUpdates,
+          email: this.email
+        }
 
-        component.alert = true;
-        component.snackbar = true;
-        component.loading = false;
-        component.timeout = 3000;
-        component.errorMsg = (this.checkbox) ? "Nice! We will be in touch." : "Nice! Thanks for your input";
-        console.log('response: ', response);
+        console.log('component: ', this.$refs.form.$attrs.action);
+        console.log('component: ', component);
 
-        // axios.post('/', qs.stringify(formResults))
-        // .then(response => {
-
-        // });
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: encode(formResults)
+        }).then(response => {
+          component.alert = true;
+          component.snackbar = true;
+          component.loading = false;
+          component.timeout = 3000;
+          component.errorMsg = (this.checkbox) ? "Nice! We will be in touch." : "Nice! Thanks for your input";
+          console.log('response: ', response);
+        });
       } else {
         // console.log('no',this.suggestionRules);
       }
