@@ -228,7 +228,7 @@ export default {
         console.log('component: ', this.$refs.form.$attrs.action);
         console.log('component: ', component);
 
-        axios.post('https://idk.fun/#/', qs.stringify(formResults))
+        axios.post('index.html', qs.stringify(formResults))
         .then(response => {
           component.alert = true;
           component.snackbar = true;
