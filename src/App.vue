@@ -248,7 +248,7 @@ export default {
           console.log('response: ', response);
         }).catch( error => {
           console.log('error: ', error);
-        };
+        });
       } else {
         // console.log('no',this.suggestionRules);
       }
