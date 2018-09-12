@@ -53,7 +53,7 @@
       <v-flex xs12 ma-4>
         <v-layout column>
           <!-- <p>Will<br>soon<br>have<br>options<br>.</p> -->
-          <v-form netlify netlify-honeypot="bot-field" action="index.html/" name="contact" ref="form" v-model="valid" lazy-validation>
+          <v-form netlify netlify-honeypot="bot-field" name="contact" ref="form" v-model="valid" lazy-validation>
             <input type="hidden" name="form-name" value="contact" />
 
             <v-textarea
@@ -215,28 +215,23 @@ export default {
       let component = this;
       if (this.$refs.form.validate()) {
 
-        // $.post($form.attr("action"), $form.serialize()).then(function() {
-        //   alert("Thank you!");
+        // let formResults = {
+        //   suggestion: this.suggestion,
+        //   email_updates: this.EmailUpdates,
+        //   email: this.email
+        // }
+
+        component.alert = true;
+        component.snackbar = true;
+        component.loading = false;
+        component.timeout = 3000;
+        component.errorMsg = (this.checkbox) ? "Nice! We will be in touch." : "Nice! Thanks for your input";
+        console.log('response: ', response);
+
+        // axios.post('/', qs.stringify(formResults))
+        // .then(response => {
+
         // });
-
-        let formResults = {
-          suggestion: this.suggestion,
-          email_updates: this.EmailUpdates,
-          email: this.email
-        }
-
-        console.log('component: ', this.$refs.form.$attrs.action);
-        console.log('component: ', component);
-
-        axios.post('/', qs.stringify(formResults))
-        .then(response => {
-          component.alert = true;
-          component.snackbar = true;
-          component.loading = false;
-          component.timeout = 3000;
-          component.errorMsg = (this.checkbox) ? "Nice! We will be in touch." : "Nice! Thanks for your input";
-          console.log('response: ', response);
-        });
       } else {
         // console.log('no',this.suggestionRules);
       }
