@@ -227,7 +227,7 @@ export default {
         fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encode(formResults)
+          body: qs.stringify(formResults)
         }).then(response => {
           component.alert = true;
           component.snackbar = true;
