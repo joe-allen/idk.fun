@@ -102,7 +102,12 @@
             <v-flex justify-center v-if="resultsAreIn">
               <v-layout column align-center class="text-center">
                 <!-- <code style="height: 100px; overflow: scroll;">{{ yelpResultsRandom1 }}</code> -->
-                <img class="result_img" v-show="yelpResultsRandom1.image_url !== undefined" :src="yelpResultsRandom1.image_url" :alt="`${yelpResultsRandom1.name} + image`">
+                <a
+                  target="_blank"
+                  :href="`http://maps.google.com/maps?q=${yelpResultsRandom1.coordinates.latitude},${yelpResultsRandom1.coordinates.longitude}`"
+                >
+                  <img class="result_img" v-show="yelpResultsRandom1.image_url !== undefined" :src="yelpResultsRandom1.image_url" :alt="`${yelpResultsRandom1.name} + image`">
+                </a>
                 <p class="result_title"><strong>{{ yelpResultsRandom1.name }}</strong></p>
                 <p class="result_rating">{{ yelpResultsRandom1.rating }} <v-icon small ma-0>star_rate</v-icon></p>
                 <p>
