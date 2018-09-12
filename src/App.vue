@@ -53,7 +53,7 @@
       <v-flex xs12 ma-4>
         <v-layout column>
           <!-- <p>Will<br>soon<br>have<br>options<br>.</p> -->
-          <v-form netlify netlify-honeypot="bot-field" action="https://idk.fun/#/" name="contact" ref="form" v-model="valid" lazy-validation>
+          <v-form netlify netlify-honeypot="bot-field" action="/index.html/" name="contact" ref="form" v-model="valid" lazy-validation>
             <input type="hidden" name="form-name" value="contact" />
 
             <v-textarea
