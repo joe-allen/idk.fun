@@ -67,6 +67,7 @@
 
             <v-textarea
               name="suggestions"
+              v-model="suggestions"
               label="Have any suggestions?"
               value=""
               hint="More options, ability to order food, sharing options"
@@ -136,6 +137,7 @@ export default {
     return {
       valid: true,
       email: '',
+      suggestions: '',
       emailRules: [
         // v => /.+@.+/.test(v) || 'E-mail must be valid'
       ],
@@ -225,9 +227,9 @@ export default {
 
         let formResults = {
           'form-name': 'contact',
-          'suggestion': this.suggestion,
-          'email_updates': this.EmailUpdates,
-          'email': this.email
+          'suggestions': this.suggestions,
+          'receiveUpdates': this.checkbox,
+          'emailAddress': this.email
         }
 
         // console.log('component: ', this.$refs.form.$attrs.action);
