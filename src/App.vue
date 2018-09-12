@@ -53,7 +53,11 @@
       <v-flex xs12 ma-4>
         <v-layout column>
           <p>Will<br>soon<br>have<br>options<br>.</p>
-          <v-form netlify name="contact" ref="form" v-model="valid" lazy-validation>
+          <v-form netlify netlify-honeypot="bot-field" action="/" name="contact" ref="form" v-model="valid" lazy-validation>
+            <input type="hidden" name="form-name" value="contact" />
+            <p style="display:none;">
+              <label>Don’t fill this out: <input name="bot-field"></label>
+            </p>
             <v-textarea
               name="suggestions"
               label="Have any suggestions?"
@@ -117,6 +121,7 @@
 <script>
 
 // import { bus } from './main';
+import qs from 'qs';
 
 export default {
   data () {
@@ -207,13 +212,31 @@ export default {
       this.alert = false;
     },
     submit () {
+      let component = this;
       if (this.$refs.form.validate()) {
-        console.log('yes',this.valid);
-        this.alert = true;
-        this.snackbar = true;
-        this.loading = false;
-        this.timeout = 3000;
-        this.errorMsg = (this.checkbox) ? "Nice! We will be in touch." : "Nice! Thanks for your input";
+
+        // $.post($form.attr("action"), $form.serialize()).then(function() {
+        //   alert("Thank you!");
+        // });
+
+        let formResults = {
+          suggestion: this.suggestion,
+          email_updates: this.EmailUpdates,
+          email: this.email
+        }
+
+        console.log('component: ', this.$refs.form.$attrs.action);
+        console.log('component: ', component);
+
+        axios.post(component.$refs.form.$attrs.action, qs.stringify(formResults))
+        .then(response => {
+          component.alert = true;
+          component.snackbar = true;
+          component.loading = false;
+          component.timeout = 3000;
+          component.errorMsg = (this.checkbox) ? "Nice! We will be in touch." : "Nice! Thanks for your input";
+          console.log('response: ', response);
+        });
       } else {
         // console.log('no',this.suggestionRules);
       }
