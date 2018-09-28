@@ -45,12 +45,13 @@
           <v-combobox
               v-show="!resultsAreIn"
               prepend-icon="my_location"
-              @keyup="getTypedLocation"
+              @keyup.native="getTypedLocation"
+              :no-filter=true
               v-model="filter_location"
               :items="location"
               clearable
               @input="filterLocation"
-              label="What's you location?"
+              label="What's your location?"
             ></v-combobox>
           <v-slider
             v-show="!resultsAreIn"
@@ -69,7 +70,6 @@
             full-width
             type="number"
           ></v-slider>
-
           <div v-if="alert">
             <!-- <v-alert
               transition="scale-transition"
@@ -109,8 +109,9 @@
                   <img class="result_img" v-show="yelpResultsRandom1.image_url !== undefined" :src="yelpResultsRandom1.image_url" :alt="`${yelpResultsRandom1.name} + image`">
                 </a>
                 <p class="result_title"><strong>{{ yelpResultsRandom1.name }}</strong></p>
-                <p class="result_rating">{{ yelpResultsRandom1.rating }} <v-icon small ma-0>star_rate</v-icon></p>
-                <p>
+                <!-- <p class="result_rating" v-if="yelpResultsRandom1.rating.length > 1"><v-icon v-for="star in yelpResultsRandom1.rating" small ma-0>star</v-icon></p> -->
+                <p class="result_rating">{{yelpResultsRandom1.rating }}<v-icon small ma-0>star</v-icon></p>
+                <p class="result_category">
                   <span v-for="(cat, index) in yelpResultsRandom1.categories" :key="`cat_${index}_${yelpResultsRandom1.id}`">
                     <v-chip class="secondary white--text" small>{{ cat.title }}</v-chip>
                   </span>
@@ -119,39 +120,97 @@
             </v-flex>
           </div>
 
-          <v-flex xs2 column justify-center align-end>
-            <v-btn
-              v-if="resultsAreIn"
-              class="mx-0 flip_btn"
-              @click="processReset"
-              :loading="loading"
-              :disabled="loading"
-              color="primary">
-              <v-icon medium v-if="resultsAreIn">keyboard_backspace</v-icon>
-              <span slot="loader" class="custom-loader">
-                <v-icon light>cached</v-icon>
-              </span>
-            </v-btn>
-            <v-btn
-              v-else
-              class="mx-0 flip_btn"
-              @click="processRequest"
-              :loading="loading"
-              :disabled="loading"
-              color="primary">
-              <v-icon medium>search</v-icon>
-              <span slot="loader" class="custom-loader">
-                <v-icon light>cached</v-icon>
-              </span>
-            </v-btn>
+          <v-flex xs2 column justify-space-around align-center>
+
+            <div v-show="showMap" id="mapContainer"></div>
+
+            <v-flex column justify-space-around align-center class="cta_buttons">
+
+              <!-- <v-btn
+                small
+                v-if="resultsAreIn"
+                class="mx-0 flip_btn_sm"
+                @click="clickShowMap"
+                :loading="loading"
+                :disabled="loading">
+
+              </v-btn> -->
+              <v-icon
+                large
+                v-show="resultsAreIn"
+                color="accent"
+                @click="clickShowMap">
+                place
+              </v-icon>
+
+
+              <v-btn
+                v-if="resultsAreIn"
+                class="mx-0 flip_btn"
+                @click="processReset"
+                :loading="loading"
+                :disabled="loading"
+                color="primary">
+                <v-icon medium v-if="resultsAreIn">keyboard_backspace</v-icon>
+                <span slot="loader" class="custom-loader">
+                  <v-icon light>cached</v-icon>
+                </span>
+              </v-btn>
+              <v-btn
+                v-else
+                class="mx-0 flip_btn"
+                @click="processRequest"
+                :loading="loading"
+                :disabled="loading"
+                color="primary">
+                <v-icon medium>search</v-icon>
+                <span slot="loader" class="custom-loader">
+                  <v-icon light>cached</v-icon>
+                </span>
+              </v-btn>
+
+              <v-icon
+                large
+                color="accent"
+                v-show="resultsAreIn"
+                @click="clickShowOptions">
+                unfold_more
+              </v-icon>
+            </v-flex>
+
           </v-flex>
+
+          <v-dialog
+            v-model="showOptions"
+            max-width="290"
+          >
+            <v-card>
+              <v-card-title class="headline">Show me the way!</v-card-title>
+
+              <v-card-text>
+                <div class="option_container">
+                  <img src="/img/lyft-icon.png" alt="lyft logo" class="option_icons">
+                  <p>Use Lyft</p>
+                </div>
+                <div class="option_container">
+                  <img src="/img/uber-icon.png" alt="uber logo" class="option_icons">
+                  <p>Use Uber</p>
+                </div>
+                <div class="option_container">
+                  <v-icon medium class="option_icons">phone</v-icon>
+                  <p>Call the place</p>
+                </div>
+              </v-card-text>
+            </v-card>
+          </v-dialog>
         </v-layout>
       </v-flex>
     </v-layout>
   </v-container>
 </template>
+
 <script>
-// import { bus } from './main';
+import mapboxgl from 'mapbox-gl';
 
 export default {
   data () {
@@ -195,7 +254,7 @@ export default {
       ],
       filter_category: '',
       filter_location: '',
-      location: ["Use My Location"],
+      location: ['Use My Location'],
       latitude: '',
       longitude: '',
       defaultRadius: 40000,
@@ -207,11 +266,15 @@ export default {
       color: '',
       mode: '',
       timeout: 3000,
+      showMap: false,
+      showOptions: false,
       categories: ["Food","Bars","Restaurants","Museums","Coffee","Wine","Brewering","Candy Stores","Parks","Adult Entertainment"]
     }
   },
   name: 'App',
-  created () {},
+  mounted () {
+
+  },
   computed: {
     // update logo size
     hasMiniVariant () {
@@ -226,7 +289,22 @@ export default {
   },
   methods: {
     getTypedLocation: function ($event) {
-      this.filter_location = $event.target.value;
+
+      if($event.target.value.length > 2) {
+
+        let encodeInput = encodeURI($event.target.value)
+
+        axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeInput}.json?access_token=pk.eyJ1Ijoiam9lLWFsbGVuIiwiYSI6ImNqbTZ3NW9qdjM0dmYzcG10cDVrcnBqMGcifQ.l5Y9LdUyIKmyZ8-ufkczJQ&autocomplete=true&limit=6`)
+        .then(response => {
+          this.location = ["Use My Location"]
+          response.data.features.forEach(element => {
+            this.location.push(element.place_name);
+          })
+        });
+      }
+      else {
+        this.location = ["Use My Location"]
+      }
     },
     filterLocation: function () {
       if(this.filter_location == 'Use My Location') {
@@ -314,6 +392,7 @@ export default {
     },
     processReset: function () {
       this.resultsAreIn = false;
+      this.showMap = false;
     },
     buildRequest: function () {
       let component = this;
@@ -350,7 +429,7 @@ export default {
       // build api query string
       let qs = function(obj) {
         let str = '';
-        let objLen = Object.values(obj).length
+        let objLen = Object.values(obj).length;
         let i = 0;
 
         for(let k in obj) {
@@ -387,7 +466,6 @@ export default {
     postRequest: function (paramResults) {
       let component = this;
       let randomNum = Math.floor((Math.random() * 50));
-      // console.log('randomNum: ', randomNum);
 
       axios.post('/.netlify/functions/yelp', paramResults)
       .then(response => {
@@ -398,6 +476,45 @@ export default {
         component.yelpResultsTotal = response.data.total;
         console.log('component.yelpResultsRandom1: ', component.yelpResultsRandom1);
       });
+    },
+    clickShowMap: function () {
+      let component = this;
+      this.showMap = !this.showMap;
+
+      if (this.showMap == true) {
+        mapboxgl.accessToken = 'pk.eyJ1Ijoiam9lLWFsbGVuIiwiYSI6ImNqbTZ3NW9qdjM0dmYzcG10cDVrcnBqMGcifQ.l5Y9LdUyIKmyZ8-ufkczJQ';
+
+        // FOR DARK THEME:
+        // style: 'mapbox://styles/mapbox/dark-v9'
+        let map = new mapboxgl.Map({
+          container: 'mapContainer',
+          logoPosition: 'top-left',
+          // center: [-122.420679, 37.772537],
+          center: [component.yelpResultsRandom1.coordinates.longitude, component.yelpResultsRandom1.coordinates.latitude],
+          zoom: 11,
+          style: 'mapbox://styles/joe-allen/cjm722bp94bof2rnyln7bp8l0'
+        });
+
+        setTimeout(() => {
+          map.resize();
+        }, 0);
+
+        var marker = new mapboxgl.Marker({
+          color: '#ffa726'
+        })
+        .setLngLat([component.longitude, component.latitude])
+        .addTo(map);
+
+        var marker = new mapboxgl.Marker({
+          color: '#1976d2'
+        })
+        .setLngLat([component.yelpResultsRandom1.coordinates.longitude, component.yelpResultsRandom1.coordinates.latitude])
+        .addTo(map);
+      }
+    },
+    clickShowOptions: function () {
+      console.log('showOPtions: ', this.showOptions);
+      this.showOptions = !this.showOptions
     }
   }
 }
@@ -405,11 +522,11 @@ export default {
 
 <style>
   ::selection {
-    background: #00bbde;
+    background: #1976d2;
     color: #fff;
   }
   ::-moz-selection {
-    background: #00bbde;
+    background: #1976d2;
     color: #fff;
   }
   .flex {
@@ -466,6 +583,27 @@ export default {
     background: #ffa726;
     /* background: linear-gradient(top, #ffa726 99%, #e57373 100%); */
   }
+  .flip_btn_sm {
+    /* position: fixed; */
+    /* align-self:center;
+    bottom: -190px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    margin: 0 auto; */
+    border-radius: 23252523px;
+    width: 25px;
+    height: 50px;
+    z-index: 1;
+    padding: 0;
+    animation: change_color;
+    animation-duration: 15s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    background: #ffa726;
+    /* background: linear-gradient(top, #ffa726 99%, #e57373 100%); */
+  }
   @keyframes change_color {
     0% {
      background: #ffa726;
@@ -504,9 +642,14 @@ export default {
     /* box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12); */
     object-fit: cover;
   }
-  .result_rating {
-    margin-right: -75px;
+  .result_rating .v-icon {
     font-size: 1.25em;
+    color: #e57373;
+    margin-left: 0px;
+  }
+  .result_category {
+    white-space: nowrap;
+    overflow-x: auto;
   }
   .result_title {
     text-transform: uppercase;
@@ -525,5 +668,36 @@ export default {
     .fill-height {
       height: 600px;
     }
+  }
+
+  .cta_buttons {
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    padding: 10px 0;
+  }
+  .option_container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .option_container p {
+    margin: 0;
+    margin-left: 16px;
+  }
+  .option_icons {
+    width: 45px;
+    align-self: center;
+  }
+
+  /* map */
+  #mapContainer { position:absolute; top:0; height: 300px; width:100%; }
+  canvas.mapboxgl-canvas {
+    left: 0;
+    width: 100%;
+  }
+  @media screen and (max-width: 800px) {
+    #mapContainer { position:absolute; top:0; width:100%; }
   }
 </style>

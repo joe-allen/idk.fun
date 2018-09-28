@@ -32,7 +32,7 @@
       <v-btn icon @click.stop="miniVariant = !miniVariant">
         <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'"></v-icon>
       </v-btn> -->
-      <v-toolbar-title v-text="title"></v-toolbar-title>
+      <router-link to="/" class="logo-link"><v-toolbar-title v-text="title"></v-toolbar-title></router-link>
       <v-spacer></v-spacer>
       <v-btn icon @click.stop="invertColors">
         <v-icon medium>invert_colors</v-icon>
@@ -273,15 +273,19 @@ export default {
     font-family: courier;
   }
   ::selection {
-    background: #00bbde;
+    background: #1976d2;
     color: #fff;
   }
   ::-moz-selection {
-    background: #00bbde;
+    background: #1976d2;
     color: #fff;
   }
   .flex {
     display: flex;
+  }
+  .logo-link {
+    text-decoration: none;
+    color: initial;
   }
   .logo {
     display: flex;

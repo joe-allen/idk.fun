@@ -19,6 +19,8 @@ import {
   VTextarea,
   VCheckbox,
   VForm,
+  VDialog,
+  VCard,
   transitions
 } from 'vuetify'
 import 'vuetify/src/stylus/app.styl'
@@ -46,6 +48,8 @@ Vue.use(Vuetify, {
     VTextarea,
     VCheckbox,
     VForm,
+    VDialog,
+    VCard,
     transitions
   },
   theme: {
