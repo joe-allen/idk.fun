@@ -121,7 +121,8 @@
         </v-layout>
       </v-flex>
       <v-footer app>
-        <span>&copy; IDK.</span>
+        <!-- <span>&copy; IDK. <a href="http://madewithloveinbaltimore.org" style="font-size:13px;color:#fff;text-decroation:none;">Made with &hearts; in Baltimore</a></span> -->
+        <span><a href="http://madewithloveinbaltimore.org" style="font-size:16px;color:#e57373;text-decroation:none;">Made with &hearts; in Baltimore</a></span>
       </v-footer>
     </v-navigation-drawer>
   </v-app>

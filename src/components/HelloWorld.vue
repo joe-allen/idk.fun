@@ -174,7 +174,7 @@
                 color="accent"
                 v-show="resultsAreIn"
                 @click="clickShowOptions">
-                unfold_more
+                local_taxi
               </v-icon>
             </v-flex>
 
@@ -184,21 +184,27 @@
             v-model="showOptions"
             max-width="290"
           >
-            <v-card>
+            <v-card v-if="resultsAreIn">
               <v-card-title class="headline">Show me the way!</v-card-title>
 
               <v-card-text>
                 <div class="option_container">
-                  <img src="/img/lyft-icon.png" alt="lyft logo" class="option_icons">
-                  <p>Use Lyft</p>
+                  <a class="ride_link d-flex align-center" :href="`https://lyft.com/ride?id=lyft&pickup[latitude]=${latitude}&pickup[longitude]=${longitude}&profile=personal&partner=yAgBxTGTRKTD&destination[latitude]=${yelpResultsRandom1.coordinates.latitude}&destination[longitude]=${yelpResultsRandom1.coordinates.longitude}`" target="_blank" rel="noopener">
+                    <img src="/img/lyft-icon.png" alt="lyft logo" class="option_icons">
+                    <p>Use Lyft</p>
+                  </a>
                 </div>
                 <div class="option_container">
-                  <img src="/img/uber-icon.png" alt="uber logo" class="option_icons">
-                  <p>Use Uber</p>
+                  <a class="ride_link d-flex align-center" :href="`https://m.uber.com/ul/?action=setPickup&client_id=XteLnZWwawM3slD31lMIiYrc6_jfvBke&pickup[latitude]=${latitude}&pickup[longitude]=${longitude}&dropoff[latitude]=${yelpResultsRandom1.coordinates.latitude}&dropoff[longitude]=${yelpResultsRandom1.coordinates.longitude}&dropoff[nickname]=${encodeURIComponent(yelpResultsRandom1.name)}`" target="_blank" rel="noopener">
+                    <img src="/img/uber-icon.png" alt="uber logo" class="option_icons">
+                    <p>Use Uber</p>
+                  </a>
                 </div>
                 <div class="option_container">
-                  <v-icon medium class="option_icons">phone</v-icon>
-                  <p>Call the place</p>
+                  <a class="ride_link d-flex align-center" :href="`tel:${encodeURIComponent(yelpResultsRandom1.display_phone)}`">
+                    <v-icon medium class="option_icons">phone</v-icon>
+                    <p>Call 'em {{yelpResultsRandom1.display_phone}}</p>
+                  </a>
                 </div>
               </v-card-text>
             </v-card>
@@ -689,6 +695,10 @@ export default {
   .option_icons {
     width: 45px;
     align-self: center;
+  }
+  .ride_link {
+    color: initial;
+    text-decoration: none;
   }
 
   /* map */
