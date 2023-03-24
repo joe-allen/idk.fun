@@ -1,0 +1,994 @@
+[
+	{
+			"business_status": "OPERATIONAL",
+			"formatted_address": "5623 E Grand Ave, Dallas, TX 75223, United States",
+			"geometry": {
+					"location": {
+							"lat": 32.7944726,
+							"lng": -96.7468787
+					},
+					"viewport": {
+							"northeast": {
+									"lat": 32.79585122989272,
+									"lng": -96.74546877010728
+							},
+							"southwest": {
+									"lat": 32.79315157010728,
+									"lng": -96.74816842989271
+							}
+					}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png",
+			"icon_background_color": "#FF9E67",
+			"icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet",
+			"name": "Barfly",
+			"opening_hours": {
+					"open_now": false
+			},
+			"photos": [
+					{
+							"height": 4000,
+							"html_attributions": [
+									"<a href=\"https://maps.google.com/maps/contrib/112667859565583291776\">dele amyson</a>"
+							],
+							"photo_reference": "AfLeUgNy8XcAZ2H-6014S5jnkCxlRnYKElVXGcckOCBpo6vvEaOdVtEd0VITcDUTmQoier9Ne7sm-D2dpkiZ1KJ91WABbB1jH4rG_JAjrm_IUiD27uQCDz5NcU6o1yDsa9ia5ApLXNKbUtrQBLs1EUwzOkATZIX7i3r_oiywoMkKtxheMj4W",
+							"width": 3000
+					}
+			],
+			"place_id": "ChIJh-9UXgiiToYRZjEfh_OfGRg",
+			"plus_code": {
+					"compound_code": "Q7V3+Q6 Dallas, Texas",
+					"global_code": "8645Q7V3+Q6"
+			},
+			"rating": 4.5,
+			"reference": "ChIJh-9UXgiiToYRZjEfh_OfGRg",
+			"types": [
+					"bar",
+					"point_of_interest",
+					"establishment"
+			],
+			"user_ratings_total": 62
+	},
+	{
+			"business_status": "OPERATIONAL",
+			"formatted_address": "1105 S Beacon St, Dallas, TX 75223, United States",
+			"geometry": {
+					"location": {
+							"lat": 32.7940689,
+							"lng": -96.7482721
+					},
+					"viewport": {
+							"northeast": {
+									"lat": 32.79545062989272,
+									"lng": -96.74688182010726
+							},
+							"southwest": {
+									"lat": 32.79275097010727,
+									"lng": -96.74958147989271
+							}
+					}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png",
+			"icon_background_color": "#FF9E67",
+			"icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet",
+			"name": "Willie's Lounge",
+			"opening_hours": {
+					"open_now": true
+			},
+			"photos": [
+					{
+							"height": 3000,
+							"html_attributions": [
+									"<a href=\"https://maps.google.com/maps/contrib/117795664687308892775\">dominic villarreal</a>"
+							],
+							"photo_reference": "AfLeUgOfq7cqr4EInR6icM7zTuT_goLd67eF_DcREtqLA2oCf6bS0IRz-4Ds_Hbz-Xn4aD7t2-IxEYcy1qSsxURqun-6bL4i7-trNxdSyvsMwjANk9_vYgm2XM6SCtDW-rfw_ACkhjxV8I79nXQZ3mGcC4mClZOyNbIjJX95DErHBMnt1nv5",
+							"width": 4000
+					}
+			],
+			"place_id": "ChIJO825QAiiToYRnoOsSkKCVdE",
+			"plus_code": {
+					"compound_code": "Q7V2+JM Dallas, Texas",
+					"global_code": "8645Q7V2+JM"
+			},
+			"price_level": 1,
+			"rating": 4.7,
+			"reference": "ChIJO825QAiiToYRnoOsSkKCVdE",
+			"types": [
+					"bar",
+					"point_of_interest",
+					"establishment"
+			],
+			"user_ratings_total": 151
+	},
+	{
+			"business_status": "OPERATIONAL",
+			"formatted_address": "3618 Samuell Blvd, Dallas, TX 75223, United States",
+			"geometry": {
+					"location": {
+							"lat": 32.7924453,
+							"lng": -96.732597
+					},
+					"viewport": {
+							"northeast": {
+									"lat": 32.79384652989272,
+									"lng": -96.73125922010729
+							},
+							"southwest": {
+									"lat": 32.79114687010728,
+									"lng": -96.73395887989274
+							}
+					}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png",
+			"icon_background_color": "#FF9E67",
+			"icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet",
+			"name": "Hardy's Lounge",
+			"opening_hours": {
+					"open_now": true
+			},
+			"photos": [
+					{
+							"height": 4160,
+							"html_attributions": [
+									"<a href=\"https://maps.google.com/maps/contrib/102627402631173716412\">A Google User</a>"
+							],
+							"photo_reference": "AfLeUgMWWYnTwIvK9XIJ4L9n_0YFsm_08uEthp3xO3KrT8EVzNhz6yEh3GQqkad6G718eixyQE0eJG5yh_yblsGrRuHAJ4YMlAaQ2XWRPIOW5FxJS4rwVPejZkRZKjpupsfYCFw3y20egw7ovk0R62rOPO350ZxhreGO0NNTzRfRMU6joopq",
+							"width": 3120
+					}
+			],
+			"place_id": "ChIJv-NxuBaiToYREHHuelx-3Wo",
+			"plus_code": {
+					"compound_code": "Q7R8+XX Dallas, Texas",
+					"global_code": "8645Q7R8+XX"
+			},
+			"rating": 4.5,
+			"reference": "ChIJv-NxuBaiToYREHHuelx-3Wo",
+			"types": [
+					"bar",
+					"point_of_interest",
+					"establishment"
+			],
+			"user_ratings_total": 81
+	},
+	{
+			"business_status": "OPERATIONAL",
+			"formatted_address": "3122 Samuell Blvd, Dallas, TX 75223, United States",
+			"geometry": {
+					"location": {
+							"lat": 32.7926851,
+							"lng": -96.74085769999999
+					},
+					"viewport": {
+							"northeast": {
+									"lat": 32.79417772989272,
+									"lng": -96.73938442010727
+							},
+							"southwest": {
+									"lat": 32.79147807010728,
+									"lng": -96.74208407989272
+							}
+					}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png",
+			"icon_background_color": "#FF9E67",
+			"icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet",
+			"name": "Fireplace Lounge",
+			"opening_hours": {
+					"open_now": true
+			},
+			"photos": [
+					{
+							"height": 3024,
+							"html_attributions": [
+									"<a href=\"https://maps.google.com/maps/contrib/115513423184727621742\">A Google User</a>"
+							],
+							"photo_reference": "AfLeUgNdE4Syj6djc6ZYPb_3xQ3bIuV266TGhQSPV1vE0jm7vzzSDRYpbgHaEexcZHLgZflT7xqmsZbNA9JopUmmBInOcSlaA4WTwvZrlDHafNNCAfy9KtB7lO0ASEj8nxUgRWw97_S5Ig58LBUfB4oE3unE_alCgwcrfO02Jf6HnZZErzPT",
+							"width": 4032
+					}
+			],
+			"place_id": "ChIJeZodWw6iToYRH3KvGrrOTIs",
+			"plus_code": {
+					"compound_code": "Q7V5+3M Dallas, Texas",
+					"global_code": "8645Q7V5+3M"
+			},
+			"price_level": 1,
+			"rating": 4.5,
+			"reference": "ChIJeZodWw6iToYRH3KvGrrOTIs",
+			"types": [
+					"bar",
+					"point_of_interest",
+					"establishment"
+			],
+			"user_ratings_total": 212
+	},
+	{
+			"business_status": "OPERATIONAL",
+			"formatted_address": "3244 Samuell Blvd, Dallas, TX 75223, United States",
+			"geometry": {
+					"location": {
+							"lat": 32.7927659,
+							"lng": -96.7387232
+					},
+					"viewport": {
+							"northeast": {
+									"lat": 32.79416162989273,
+									"lng": -96.73713687010728
+							},
+							"southwest": {
+									"lat": 32.79146197010729,
+									"lng": -96.73983652989273
+							}
+					}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png",
+			"icon_background_color": "#FF9E67",
+			"icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet",
+			"name": "Casanova Sports Bar",
+			"photos": [
+					{
+							"height": 3024,
+							"html_attributions": [
+									"<a href=\"https://maps.google.com/maps/contrib/117544160981911251554\">A Google User</a>"
+							],
+							"photo_reference": "AfLeUgO7YYS3n4pX2n8a8lKt6QppH97mCv1OWO-GkT2f2P_nHIWzIqzk3-xLwg2E7-aLgJyt8jgrizRq-dgRtBHcxWJbCLGwfm3XLHuwzgqqSDfddJS59QWx1Ul440ltzLdorjh6r_J8HIjQHbTlW8ccDSFZG_tF9Ib0kF1u2yBZbvhNcA8B",
+							"width": 4032
+					}
+			],
+			"place_id": "ChIJF-54Jw6iToYRDmGkVUz1YrE",
+			"plus_code": {
+					"compound_code": "Q7V6+4G Dallas, Texas",
+					"global_code": "8645Q7V6+4G"
+			},
+			"rating": 4.4,
+			"reference": "ChIJF-54Jw6iToYRDmGkVUz1YrE",
+			"types": [
+					"bar",
+					"point_of_interest",
+					"establishment"
+			],
+			"user_ratings_total": 22
+	},
+	{
+			"business_status": "OPERATIONAL",
+			"formatted_address": "4848 Military Pkwy, Dallas, TX 75223, United States",
+			"geometry": {
+					"location": {
+							"lat": 32.7829525,
+							"lng": -96.7344718
+					},
+					"viewport": {
+							"northeast": {
+									"lat": 32.78439902989273,
+									"lng": -96.73316382010728
+							},
+							"southwest": {
+									"lat": 32.78169937010728,
+									"lng": -96.73586347989271
+							}
+					}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png",
+			"icon_background_color": "#FF9E67",
+			"icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet",
+			"name": "CJ's Billiard and Sport Bar",
+			"opening_hours": {
+					"open_now": false
+			},
+			"photos": [
+					{
+							"height": 3000,
+							"html_attributions": [
+									"<a href=\"https://maps.google.com/maps/contrib/104207809702159194019\">Califas Ie</a>"
+							],
+							"photo_reference": "AfLeUgNYzRet4Nym7u_yk9JjKHcjdU6TWqXoHOrQo_9zLcat6TSdLIpQTVctfXjknc_lw7bTr-UMP9fo5a8B9WY1hjjAD6Mlp1RyBWJ4-rzJLp2CJo5xvEw38xN7GQKmGBPxz-5apNbj-oSg6FPO2kg-oOZ9xsRfdaw7H68Vt4oyUO49V46b",
+							"width": 4000
+					}
+			],
+			"place_id": "ChIJiXnn-wmjToYR0C03bhSNo9c",
+			"plus_code": {
+					"compound_code": "Q7M8+56 Dallas, Texas",
+					"global_code": "8645Q7M8+56"
+			},
+			"rating": 4.4,
+			"reference": "ChIJiXnn-wmjToYR0C03bhSNo9c",
+			"types": [
+					"bar",
+					"store",
+					"point_of_interest",
+					"establishment"
+			],
+			"user_ratings_total": 162
+	},
+	{
+			"business_status": "OPERATIONAL",
+			"formatted_address": "Dallas, TX 75223, United States",
+			"geometry": {
+					"location": {
+							"lat": 32.7838152,
+							"lng": -96.760829
+					},
+					"viewport": {
+							"northeast": {
+									"lat": 32.78522607989273,
+									"lng": -96.75949242010728
+							},
+							"southwest": {
+									"lat": 32.78252642010728,
+									"lng": -96.76219207989273
+							}
+					}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png",
+			"icon_background_color": "#FF9E67",
+			"icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet",
+			"name": "Linares Bar",
+			"opening_hours": {
+					"open_now": true
+			},
+			"photos": [
+					{
+							"height": 1836,
+							"html_attributions": [
+									"<a href=\"https://maps.google.com/maps/contrib/112763765150662172815\">A Google User</a>"
+							],
+							"photo_reference": "AfLeUgPMinqcCH8Bkj7otvTCLbDHUv6UCFsHzBmVrchBp4bf-61I_pDrcSvc9FxXtce1gOemCZgSLXTiGnA2YtOlMqdVPcO6UXR62yWzC9svhA-RZz5_Vbt53IsUpoyEBFBRbHf4TMd7xOq_LUM2Gevd6mXVrTgz4aVF8xLAODoxX0DqEtRC",
+							"width": 3264
+					}
+			],
+			"place_id": "ChIJgzw845eYToYRfHak69zzI2g",
+			"plus_code": {
+					"compound_code": "Q6MQ+GM Dallas, Texas",
+					"global_code": "8645Q6MQ+GM"
+			},
+			"rating": 3.7,
+			"reference": "ChIJgzw845eYToYRfHak69zzI2g",
+			"types": [
+					"bar",
+					"point_of_interest",
+					"establishment"
+			],
+			"user_ratings_total": 15
+	},
+	{
+			"business_status": "OPERATIONAL",
+			"formatted_address": "825 S Carroll Ave, Dallas, TX 75223, United States",
+			"geometry": {
+					"location": {
+							"lat": 32.7866003,
+							"lng": -96.7622811
+					},
+					"viewport": {
+							"northeast": {
+									"lat": 32.78799047989272,
+									"lng": -96.76096452010728
+							},
+							"southwest": {
+									"lat": 32.78529082010728,
+									"lng": -96.76366417989273
+							}
+					}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png",
+			"icon_background_color": "#FF9E67",
+			"icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet",
+			"name": "Carrol Night Club",
+			"place_id": "ChIJzS4NVoWZToYRpZpwFx_T2ek",
+			"plus_code": {
+					"compound_code": "Q6PQ+M2 Dallas, Texas",
+					"global_code": "8645Q6PQ+M2"
+			},
+			"rating": 4.6,
+			"reference": "ChIJzS4NVoWZToYRpZpwFx_T2ek",
+			"types": [
+					"bar",
+					"point_of_interest",
+					"establishment"
+			],
+			"user_ratings_total": 33
+	},
+	{
+			"business_status": "OPERATIONAL",
+			"formatted_address": "2908 Samuell Blvd, Dallas, TX 75223, United States",
+			"geometry": {
+					"location": {
+							"lat": 32.7925613,
+							"lng": -96.7438858
+					},
+					"viewport": {
+							"northeast": {
+									"lat": 32.79411007989272,
+									"lng": -96.74253587010728
+							},
+							"southwest": {
+									"lat": 32.79141042010727,
+									"lng": -96.74523552989272
+							}
+					}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+			"icon_background_color": "#FF9E67",
+			"icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+			"name": "Sonrisas #2 Restaurante Y Bar Hondureño",
+			"opening_hours": {
+					"open_now": true
+			},
+			"photos": [
+					{
+							"height": 4032,
+							"html_attributions": [
+									"<a href=\"https://maps.google.com/maps/contrib/118002354257384077329\">Morlin Suazo</a>"
+							],
+							"photo_reference": "AfLeUgP2FjoLZYoRHyMTOrDHFiXKtHVkqZYlMhPgKyVOypd38y3O3j3gig6iPUbT-BsrpMRNvin0awpxUd0MgFYVUS05oodj9uyAvtUmDPbYtxupzBSmNiMP67rYUsv47Kq5VQTyYzBEA0U6vzf3knSooNQakEnsc1XK9TdEkh5mNd9vK8uK",
+							"width": 3024
+					}
+			],
+			"place_id": "ChIJBcL9zA6iToYR7v625ZgglpY",
+			"plus_code": {
+					"compound_code": "Q7V4+2C Dallas, Texas",
+					"global_code": "8645Q7V4+2C"
+			},
+			"rating": 3.9,
+			"reference": "ChIJBcL9zA6iToYR7v625ZgglpY",
+			"types": [
+					"restaurant",
+					"meal_takeaway",
+					"point_of_interest",
+					"food",
+					"establishment"
+			],
+			"user_ratings_total": 41
+	},
+	{
+			"business_status": "OPERATIONAL",
+			"formatted_address": "1906 S Haskell Ave, Dallas, TX 75223, United States",
+			"geometry": {
+					"location": {
+							"lat": 32.7832828,
+							"lng": -96.74797989999999
+					},
+					"viewport": {
+							"northeast": {
+									"lat": 32.78466272989272,
+									"lng": -96.74662677010728
+							},
+							"southwest": {
+									"lat": 32.78196307010728,
+									"lng": -96.74932642989272
+							}
+					}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png",
+			"icon_background_color": "#FF9E67",
+			"icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet",
+			"name": "Wriggly Tin",
+			"place_id": "ChIJk2BHYUSjToYRPFhmswu7zog",
+			"plus_code": {
+					"compound_code": "Q7M2+9R Dallas, Texas",
+					"global_code": "8645Q7M2+9R"
+			},
+			"rating": 0,
+			"reference": "ChIJk2BHYUSjToYRPFhmswu7zog",
+			"types": [
+					"bar",
+					"point_of_interest",
+					"establishment"
+			],
+			"user_ratings_total": 0
+	},
+	{
+			"business_status": "OPERATIONAL",
+			"formatted_address": "3602 Samuell Blvd, Dallas, TX 75223, United States",
+			"geometry": {
+					"location": {
+							"lat": 32.7923935,
+							"lng": -96.7331649
+					},
+					"viewport": {
+							"northeast": {
+									"lat": 32.79380002989272,
+									"lng": -96.73181957010728
+							},
+							"southwest": {
+									"lat": 32.79110037010727,
+									"lng": -96.73451922989273
+							}
+					}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+			"icon_background_color": "#FF9E67",
+			"icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+			"name": "Las 3 Fronteras",
+			"opening_hours": {
+					"open_now": true
+			},
+			"photos": [
+					{
+							"height": 1920,
+							"html_attributions": [
+									"<a href=\"https://maps.google.com/maps/contrib/103574329739349632507\">A Google User</a>"
+							],
+							"photo_reference": "AfLeUgMqPd_krulC3ElkpkIrc0VqjwkvgnfWUtUK4XV_2boXLMFCRRcfosbDTqO69J8NlHZERTgIsMPRtw3wYoo0W_OXJ3skPReKPs0gjVd6EvGw-NugFDtrJeE4dvUbyNZIEtVKrQVH2f6tx9PRm0c9154rsg0NfYNj0eKShEJlOiYOmw5U",
+							"width": 1080
+					}
+			],
+			"place_id": "ChIJheuntRaiToYRf58JL5H38t0",
+			"plus_code": {
+					"compound_code": "Q7R8+XP Dallas, Texas",
+					"global_code": "8645Q7R8+XP"
+			},
+			"rating": 3.9,
+			"reference": "ChIJheuntRaiToYRf58JL5H38t0",
+			"types": [
+					"restaurant",
+					"point_of_interest",
+					"food",
+					"establishment"
+			],
+			"user_ratings_total": 22
+	},
+	{
+			"business_status": "OPERATIONAL",
+			"formatted_address": "3320 Samuell Blvd, Dallas, TX 75223, United States",
+			"geometry": {
+					"location": {
+							"lat": 32.7926511,
+							"lng": -96.738012
+					},
+					"viewport": {
+							"northeast": {
+									"lat": 32.79413917989272,
+									"lng": -96.73666172010726
+							},
+							"southwest": {
+									"lat": 32.79143952010728,
+									"lng": -96.73936137989271
+							}
+					}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png",
+			"icon_background_color": "#FF9E67",
+			"icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet",
+			"name": "El Ruidoso AKA La Rumba Night Club",
+			"opening_hours": {
+					"open_now": false
+			},
+			"photos": [
+					{
+							"height": 2988,
+							"html_attributions": [
+									"<a href=\"https://maps.google.com/maps/contrib/116181947573202203053\">Jose Padilla</a>"
+							],
+							"photo_reference": "AfLeUgOxsanWbe8XfRBtW4xlpsrL4Knl8hLQN6reuCeTVO_0GkjZsoc-Rb6rLNRUK-YjJBrBqXpeN42X5E1OlNlOONqJQGNXXE_eO-pRXmE4eLRAEfcWYZr6x4X-45wq0DfEvwOk0EqxBeCAjfNnn5scgso19SuptAobGJIXVjrcR5JNyNAB",
+							"width": 5312
+					}
+			],
+			"place_id": "ChIJiQwdxBGiToYRcqGVEe0ZYyc",
+			"plus_code": {
+					"compound_code": "Q7V6+2Q Dallas, Texas",
+					"global_code": "8645Q7V6+2Q"
+			},
+			"rating": 3,
+			"reference": "ChIJiQwdxBGiToYRcqGVEe0ZYyc",
+			"types": [
+					"night_club",
+					"bar",
+					"point_of_interest",
+					"establishment"
+			],
+			"user_ratings_total": 2
+	},
+	{
+			"business_status": "OPERATIONAL",
+			"formatted_address": "2624 Commerce St, Dallas, TX 75226, United States",
+			"geometry": {
+					"location": {
+							"lat": 32.782683,
+							"lng": -96.7851736
+					},
+					"viewport": {
+							"northeast": {
+									"lat": 32.78409222989272,
+									"lng": -96.78384157010727
+							},
+							"southwest": {
+									"lat": 32.78139257010727,
+									"lng": -96.78654122989272
+							}
+					}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png",
+			"icon_background_color": "#FF9E67",
+			"icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet",
+			"name": "Adair's Saloon",
+			"opening_hours": {
+					"open_now": true
+			},
+			"photos": [
+					{
+							"height": 9000,
+							"html_attributions": [
+									"<a href=\"https://maps.google.com/maps/contrib/115396486155644518274\">Scott Rhodes</a>"
+							],
+							"photo_reference": "AfLeUgP3QPVX4qhWBXZwnROhp3sx28Nx0QWXI_ZSvHIbidxIyjOlGiaTWmu_bzQB-8pH9Qlgv_LZA78BTH3FWWhdd69RKuyEcfDp_ptzA7juMBCA1qWJQnkXCoWvGdEmDtobISkIaQyXQPxHWO9C9FTMmEv97o0BflVhsrEAA5_OLPE6nLvm",
+							"width": 12000
+					}
+			],
+			"place_id": "ChIJe5CtY-eYToYR9vKBY6QYo0M",
+			"plus_code": {
+					"compound_code": "Q6M7+3W Dallas, Texas",
+					"global_code": "8645Q6M7+3W"
+			},
+			"price_level": 1,
+			"rating": 4.6,
+			"reference": "ChIJe5CtY-eYToYR9vKBY6QYo0M",
+			"types": [
+					"bar",
+					"point_of_interest",
+					"establishment"
+			],
+			"user_ratings_total": 653
+	},
+	{
+			"business_status": "OPERATIONAL",
+			"formatted_address": "4224 Ash Ln, Dallas, TX 75223, United States",
+			"geometry": {
+					"location": {
+							"lat": 32.7864283,
+							"lng": -96.7654271
+					},
+					"viewport": {
+							"northeast": {
+									"lat": 32.78785237989273,
+									"lng": -96.76402442010729
+							},
+							"southwest": {
+									"lat": 32.78515272010728,
+									"lng": -96.76672407989273
+							}
+					}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+			"icon_background_color": "#FF9E67",
+			"icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+			"name": "Joe's Seafood, Burgers,and Bar-B-Que",
+			"opening_hours": {
+					"open_now": true
+			},
+			"photos": [
+					{
+							"height": 3024,
+							"html_attributions": [
+									"<a href=\"https://maps.google.com/maps/contrib/111927839523396891874\">Angel Ortiz</a>"
+							],
+							"photo_reference": "AfLeUgNfNWlSz3BcTh6BBbO9zZ1qcbPX77pXKQWLQnzs20bPl8dpNI-lC0ioZqitejjze9qaORkQVY42l0-AoLiOgjnChG4QDK8mmhS5-6quXd6y1t28VxmJNKL3ykOY5D8K9qcSYTx6PYJQO5ilC7cS0encPWsvamZoJqdKUs8XNfQfCTN7",
+							"width": 4032
+					}
+			],
+			"place_id": "ChIJi3NRgL6YToYRHu_INEmIm1E",
+			"plus_code": {
+					"compound_code": "Q6PM+HR Dallas, Texas",
+					"global_code": "8645Q6PM+HR"
+			},
+			"price_level": 2,
+			"rating": 4.3,
+			"reference": "ChIJi3NRgL6YToYRHu_INEmIm1E",
+			"types": [
+					"restaurant",
+					"point_of_interest",
+					"food",
+					"establishment"
+			],
+			"user_ratings_total": 466
+	},
+	{
+			"business_status": "OPERATIONAL",
+			"formatted_address": "3615 Parry Ave, Dallas, TX 75226, United States",
+			"geometry": {
+					"location": {
+							"lat": 32.7818466,
+							"lng": -96.7666383
+					},
+					"viewport": {
+							"northeast": {
+									"lat": 32.78317232989271,
+									"lng": -96.76520762010728
+							},
+							"southwest": {
+									"lat": 32.78047267010727,
+									"lng": -96.76790727989273
+							}
+					}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png",
+			"icon_background_color": "#FF9E67",
+			"icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet",
+			"name": "Las Almas Rotas",
+			"opening_hours": {
+					"open_now": false
+			},
+			"photos": [
+					{
+							"height": 1600,
+							"html_attributions": [
+									"<a href=\"https://maps.google.com/maps/contrib/107728357024603263605\">Alfonso Solorzano</a>"
+							],
+							"photo_reference": "AfLeUgMIMMd64_ZdV8A36kOmLMhYOlZCC3wQGIQtCgbIc5ijUcZmJH-Bk8i0_KScQivfqijpL1QHf4u5jPWqdskowxU6AcRVBbrgWALGC5gaIPEBwPXAM6MhoYtaGBMcwGAaBqN2XgLfDJLt_1G_jRmWk7WjNG3juIOPTpbWFJENjpgqANFT",
+							"width": 900
+					}
+			],
+			"place_id": "ChIJafTxxpWYToYRIG0QJ3VUdcI",
+			"plus_code": {
+					"compound_code": "Q6JM+P8 Dallas, Texas",
+					"global_code": "8645Q6JM+P8"
+			},
+			"price_level": 2,
+			"rating": 4.5,
+			"reference": "ChIJafTxxpWYToYRIG0QJ3VUdcI",
+			"types": [
+					"bar",
+					"restaurant",
+					"point_of_interest",
+					"food",
+					"establishment"
+			],
+			"user_ratings_total": 593
+	},
+	{
+			"business_status": "OPERATIONAL",
+			"formatted_address": "2712 Main St, Dallas, TX 75226, United States",
+			"geometry": {
+					"location": {
+							"lat": 32.7837303,
+							"lng": -96.78350309999999
+					},
+					"viewport": {
+							"northeast": {
+									"lat": 32.78514882989272,
+									"lng": -96.78210017010728
+							},
+							"southwest": {
+									"lat": 32.78244917010728,
+									"lng": -96.78479982989272
+							}
+					}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png",
+			"icon_background_color": "#FF9E67",
+			"icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet",
+			"name": "Will Call Bar",
+			"opening_hours": {
+					"open_now": true
+			},
+			"photos": [
+					{
+							"height": 6316,
+							"html_attributions": [
+									"<a href=\"https://maps.google.com/maps/contrib/111344003568636902967\">A Google User</a>"
+							],
+							"photo_reference": "AfLeUgNO7Z4xiHOfrkEeIdK5t0zDanpgv6MXt1a65g21QOHma6GUUZLIdkOOgSp6umzrrF3_KSYkM_X5JT4Qmdm2oTpNgdHEvnU76VendTpSbzij01tPGnE6MNAoWmrzC0Z4OFqXagDq-P3kEyytsgc-0iO_g1fdm9H4RSSnK8Cc7ViVF9s_",
+							"width": 9474
+					}
+			],
+			"place_id": "ChIJ_d0wad2YToYRqP92Dzr2ZTo",
+			"plus_code": {
+					"compound_code": "Q6M8+FH Dallas, Texas",
+					"global_code": "8645Q6M8+FH"
+			},
+			"price_level": 1,
+			"rating": 4.7,
+			"reference": "ChIJ_d0wad2YToYRqP92Dzr2ZTo",
+			"types": [
+					"bar",
+					"point_of_interest",
+					"establishment"
+			],
+			"user_ratings_total": 413
+	},
+	{
+			"business_status": "OPERATIONAL",
+			"formatted_address": "2532 Martin Luther King Jr Blvd, Dallas, TX 75215, United States",
+			"geometry": {
+					"location": {
+							"lat": 32.7668266,
+							"lng": -96.7706451
+					},
+					"viewport": {
+							"northeast": {
+									"lat": 32.76825612989273,
+									"lng": -96.76933377010728
+							},
+							"southwest": {
+									"lat": 32.76555647010728,
+									"lng": -96.77203342989273
+							}
+					}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png",
+			"icon_background_color": "#FF9E67",
+			"icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet",
+			"name": "Emerald City Bar & Grill",
+			"opening_hours": {
+					"open_now": false
+			},
+			"photos": [
+					{
+							"height": 800,
+							"html_attributions": [
+									"<a href=\"https://maps.google.com/maps/contrib/103388705184256798989\">A Google User</a>"
+							],
+							"photo_reference": "AfLeUgOoYE1UCFAp7l3DsKOa0jlR_f_CsYhZVyWXemRvtJAyYtKTATVVDRAjGTiCQPPmhzBy-k8vLHeKssYGs4jGWtyA7jjkYw8YIwDClj2mXqupxfOpLQXptI1GWH1XBhzbgK9EbpQy_jsbDj7vqz2T8uTyHNQbiCyl70-9EX4tgL3OGdTN",
+							"width": 1200
+					}
+			],
+			"place_id": "ChIJYz-WVPOYToYRL4k7Cr2z5AA",
+			"plus_code": {
+					"compound_code": "Q68H+PP Dallas, Texas",
+					"global_code": "8645Q68H+PP"
+			},
+			"price_level": 1,
+			"rating": 4.2,
+			"reference": "ChIJYz-WVPOYToYRL4k7Cr2z5AA",
+			"types": [
+					"bar",
+					"restaurant",
+					"point_of_interest",
+					"food",
+					"establishment"
+			],
+			"user_ratings_total": 99
+	},
+	{
+			"business_status": "OPERATIONAL",
+			"formatted_address": "5431 E Grand Ave, Dallas, TX 75223, United States",
+			"geometry": {
+					"location": {
+							"lat": 32.7928217,
+							"lng": -96.7487106
+					},
+					"viewport": {
+							"northeast": {
+									"lat": 32.79409807989272,
+									"lng": -96.74726882010728
+							},
+							"southwest": {
+									"lat": 32.79139842010728,
+									"lng": -96.74996847989273
+							}
+					}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+			"icon_background_color": "#FF9E67",
+			"icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+			"name": "Sabor Latino",
+			"opening_hours": {
+					"open_now": true
+			},
+			"photos": [
+					{
+							"height": 3024,
+							"html_attributions": [
+									"<a href=\"https://maps.google.com/maps/contrib/105308709974659967304\">A Google User</a>"
+							],
+							"photo_reference": "AfLeUgN1K4NboP47i_mIY1i3KLenSxcNf9kvZiuhYrIWd7ln1e2u79Qdce3RZEA6vSn3VKuPAkp34v-pGtyjSIQaKtTtJBpQ0jWT_zGKeqD0MTNXAVIwXmCgip1aAvRZ8TTrGRjH0vHdwrGpxudYA-o_5pfn_iH2PbduIR1N4ngblloZY4LH",
+							"width": 4032
+					}
+			],
+			"place_id": "ChIJt2zq8kejToYRGchbd1uBiWI",
+			"plus_code": {
+					"compound_code": "Q7V2+4G Dallas, Texas",
+					"global_code": "8645Q7V2+4G"
+			},
+			"rating": 4.3,
+			"reference": "ChIJt2zq8kejToYRGchbd1uBiWI",
+			"types": [
+					"restaurant",
+					"point_of_interest",
+					"food",
+					"establishment"
+			],
+			"user_ratings_total": 136
+	},
+	{
+			"business_status": "OPERATIONAL",
+			"formatted_address": "500 S Fitzhugh Ave, Dallas, TX 75223, United States",
+			"geometry": {
+					"location": {
+							"lat": 32.792615,
+							"lng": -96.76028
+					},
+					"viewport": {
+							"northeast": {
+									"lat": 32.79393932989272,
+									"lng": -96.75904747010729
+							},
+							"southwest": {
+									"lat": 32.79123967010728,
+									"lng": -96.76174712989273
+							}
+					}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+			"icon_background_color": "#FF9E67",
+			"icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+			"name": "Josie Ice Cream & Grill",
+			"opening_hours": {
+					"open_now": true
+			},
+			"photos": [
+					{
+							"height": 3024,
+							"html_attributions": [
+									"<a href=\"https://maps.google.com/maps/contrib/108648861167611278979\">Angela Ekpa</a>"
+							],
+							"photo_reference": "AfLeUgMMSq4Xiaq7pr-j7GI-cNjTD9qX04EWWKVcwK-QwO5rR2YhYwRsz9D2TivAHuLu-nH0KS8pRQwNXVaDapGpwSoaTY5lTAOiM_F4tTGS_9VYDt1LGO7GAZMhpgU-arh72CuRMY9FbOvQsM1q-XocWZCNnNVUTxO5qfuaDoARgHTDdMB2",
+							"width": 4032
+					}
+			],
+			"place_id": "ChIJj7in1bqYToYR9Vx4eoiE1vo",
+			"plus_code": {
+					"compound_code": "Q6VQ+2V Dallas, Texas",
+					"global_code": "8645Q6VQ+2V"
+			},
+			"rating": 4.3,
+			"reference": "ChIJj7in1bqYToYR9Vx4eoiE1vo",
+			"types": [
+					"bar",
+					"store",
+					"restaurant",
+					"point_of_interest",
+					"food",
+					"establishment"
+			],
+			"user_ratings_total": 214
+	},
+	{
+			"business_status": "OPERATIONAL",
+			"formatted_address": "3610 Samuell Blvd, Dallas, TX 75223, United States",
+			"geometry": {
+					"location": {
+							"lat": 32.7927219,
+							"lng": -96.73297559999999
+					},
+					"viewport": {
+							"northeast": {
+									"lat": 32.79409317989273,
+									"lng": -96.73162582010727
+							},
+							"southwest": {
+									"lat": 32.79139352010728,
+									"lng": -96.73432547989272
+							}
+					}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png",
+			"icon_background_color": "#FF9E67",
+			"icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet",
+			"name": "Palmeras Night Club",
+			"opening_hours": {
+					"open_now": false
+			},
+			"photos": [
+					{
+							"height": 4032,
+							"html_attributions": [
+									"<a href=\"https://maps.google.com/maps/contrib/103862467796412030447\">A Google User</a>"
+							],
+							"photo_reference": "AfLeUgO7MXvCAU5SJTSAzsnOBVM5vfy4akNUp4ihcWc9g-TkeEUO_t91YNkBu8wSGE4q7nGkemtP0gxZMPhilumACbFBvxYBwov6L-_kIh5orgBXTmop5sg4T2Lh0w9OhJE91kM-9FhvVIuYPjr48G5MSleG0J37Lr5xgC7MD-yyPLRsBVAL",
+							"width": 3024
+					}
+			],
+			"place_id": "ChIJA706zxaiToYR3QS97A5w-Iw",
+			"plus_code": {
+					"compound_code": "Q7V8+3R Dallas, Texas",
+					"global_code": "8645Q7V8+3R"
+			},
+			"rating": 3.3,
+			"reference": "ChIJA706zxaiToYR3QS97A5w-Iw",
+			"types": [
+					"night_club",
+					"point_of_interest",
+					"establishment"
+			],
+			"user_ratings_total": 12
+	}
+]
