@@ -8,18 +8,18 @@
 
 ## ToDo
 <!-- - Google Places always pulls the same 20 per zip. Get it to randomize -->
-- Make the slug prettier (maybe `category-zip-funname-id`)?
-- Make private `PUBLIC_YELP_KEY` then update lib/yelp.js
+- [ ] Listen for two connections before game play. ("Waiting on 1 other person..." Show share button here too so they dont hit'Back').
+- [ ] Make the slug prettier (maybe `category-zip-funname-id`)?
+- [ ] Make private `PUBLIC_YELP_KEY` then update lib/yelp.js
+- [ ] Enable location services?
+- [ ] V2: Dark/light theme
 
-## Jobs
-- Marketer
-- Javascript Dev (Svelte / Google Maps / Places API, Supabase, Sentry)
+## References / Tech Used
+- SvelteKit: https://kit.svelte.dev/
+- Supabase: https://supabase.com/
+- Yelp API: https://docs.developer.yelp.com/reference/v3_business_search
 
-## References
-
-YelpAPI: https://docs.developer.yelp.com/reference/v3_business_search
-
-## Thanks
+## Thanks & Praise
 - Svelte / Svelte Community
 - Supabase
 - Yelp

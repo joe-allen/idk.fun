@@ -14,7 +14,8 @@ export async function load({params}) {
 
 	console.log('success', results);
 	return {
-		results
+		results,
+		slug: params.slug
 	}
 
 	throw error(404, 'Not Found');

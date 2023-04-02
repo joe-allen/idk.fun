@@ -10,9 +10,11 @@
 	let show;
 	let url;
 	let copyBtn;
+	let userId;
 	let loading = false;
 
 	onMount(() => {
+		console.log('form', form);
 		// check if form exists
 		// and error free
 		if (form && !form.error) {
@@ -36,11 +38,21 @@
 	// w/ results
 	function play() {
 		if (form && !form.error) {
+			if (!window.localStorage.getItem('userId')) {
+				userId = crypto.randomUUID();
+				window.localStorage.setItem('userId', userId);
+			}
+
+			// store places in Store.js
 			places.update(() => {
-				return form;
+				return {
+					form,
+					userId
+				}
 			});
 		}
 
+		// got to results
 		goto(url);
 	}
 
@@ -76,13 +88,13 @@
 		<h3>Select a category</h3>
 		<select name="cat" value={form?.cat ?? ''}>
 			<option disabled>Select</option>
-			<option>Food</option>
-			<option>Bar</option>
-			<option>Museum</option>
+			<option value="food">Food</option>
+			<option value="bar">Bar</option>
+			<option value="museum">Museum</option>
 		</select>
 
 		<h3>Provide a zip code</h3>
-		<input type="number" name="zip" value={form?.zip ?? ''}>
+		<input type="number" name="zip" maxlength="5" value={form?.zip ?? ''}>
 		<br>
 		<br>
 		<!-- <button>Find Locations</button> -->
@@ -90,13 +102,13 @@
 		{#if loading}
 			<div>loading...</div>
 		{/if}
-		{#if form && form.error}
-			<div>Whoops, please fill out all fields.</div>
+		{#if form && form.error }
+			<div>{form.message}</div>
 		{/if}
 	</fieldset>
 </form>
 
-{#if form && !form.error}
+{#if form && !form.error }
 <div style="display: {show ? 'block' : 'none'};">
 	<button
 		class="b-copy-link"
